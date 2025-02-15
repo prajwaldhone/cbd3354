@@ -1,0 +1,12 @@
+# Use the official GitLab Runner image as the base
+FROM gitlab/gitlab-runner:latest
+
+# Install Docker CLI inside the container
+RUN apt-get update && apt-get install -y docker.io && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Copy the custom entrypoint script (optional)
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+RUN chmod +x /usr/local/bin/entrypoint.sh
+
+# Use custom entrypoint script (adjust this if not needed)
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
