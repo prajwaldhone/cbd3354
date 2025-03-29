@@ -1,0 +1,13 @@
+stages:
+  - build
+  - test
+  - deploy
+
+variables:
+  DOCKER_IMAGE: gcr.io/<>/flask-app
+  MONGO_URI:
+
+before_script:
+  - echo "Aythenticating with Google Cloud..."
+  - echo
+  - gcloud auth activate-service-account --key-file=
