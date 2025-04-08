@@ -22,6 +22,6 @@ spec:
     spec:
       containers:
         - name: nginx-proxy
-          image: <dockerhub-username>/nginx-proxy:latest
+          image: prajwaldhone/nginx-proxy:latest
           ports:
             - containerPort: 80
